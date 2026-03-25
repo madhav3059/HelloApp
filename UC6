@@ -1,0 +1,23 @@
+public class Greeter {
+    public static void main(String[] args) {
+        // Handle the default case first
+        if (args.length == 0) {
+            System.out.println("Hello, World!");
+            return;
+        }
+
+        // Use a StringBuilder to gather multiple names
+        StringBuilder names = new StringBuilder();
+        
+        // Enhanced for loop to process zero or more arguments
+        for (String name : args) {
+            names.append(name).append(", ");
+        }
+
+        // Convert to String and remove the trailing comma and space
+        String allNames = names.toString();
+        allNames = allNames.substring(0, allNames.length() - 2);
+
+        System.out.println("Hello, " + allNames + "!");
+    }
+}
