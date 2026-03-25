@@ -1,0 +1,12 @@
+public class Greeter {
+    public static void main(String[] args) {
+        // Handle the default case
+        if (args.length == 0) {
+            System.out.println("Hello, World!");
+        } else {
+            // join() handles the commas between names automatically
+            String allNames = String.join(", ", args);
+            System.out.println("Hello, " + allNames + "!");
+        }
+    }
+}
