@@ -1,12 +1,24 @@
-public class Greeter {
-    public static void main(String[] args) {
-        String name;
-        if (args.length > 0) {
-            name = args[0];
-        } else {
-            name = "World";
+ZoneDesk (Desk)
+class ZoneDesk {
+    Vehicle vehicle;
+
+    public ZoneDesk(Vehicle vehicle) {
+        this.vehicle = vehicle;
+    }
+
+    public void checkType(String[] allowedTypes) {
+        boolean allowed = false;
+
+        for (int i = 0; i < allowedTypes.length; i++) {
+            if (vehicle.type.equals(allowedTypes[i])) {
+                allowed = true;
+                break;
+            }
         }
 
-        System.out.println("Hello, " + name + "!");
+        if (allowed) {
+            System.out.println(vehicle.model + " is allowed in this zone.");
+        } else {
+            System.out.println("Type not permitted.");
+        }
     }
-}
